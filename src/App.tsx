@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import './App.css'
 import type { CountryType } from './type';
 
@@ -13,6 +14,8 @@ function App() {
   return (
     <>
     <h2>World on the go...</h2>
+    <Suspense fallback="Loading...">
+    </Suspense>
     </>
   )
 }
