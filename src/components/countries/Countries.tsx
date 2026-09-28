@@ -1,6 +1,7 @@
 import { use } from "react"
-import type { CountryType } from "../type"
-import Country from "./country/Country"
+import type { CountryType } from "../../type"
+import Country from "../country/Country"
+import "./Countries.css"
 
 export interface CountriesProps {
     countriesPromise: Promise<CountryType[]>
@@ -14,11 +15,11 @@ export default function Countries({ countriesPromise }: CountriesProps) {
     return (
         <div>
             <h2>Countries: </h2>
-            <ul>
+            <div className="countries">
                 {
-                    contries.map((country) => <Country key={country.name.common} country={country} />)
+                    contries.map((country) => <Country key={country.ccn3.ccn3} country={country} />)
                 }
-            </ul>
+            </div>
         </div>
     )
 }
