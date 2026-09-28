@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import './App.css'
 import type { CountryType } from './type';
+import Countries from './components/Countries';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
     <>
     <h2>World on the go...</h2>
     <Suspense fallback="Loading...">
+      <Countries countriesPromise={countriesPromise()}/>
     </Suspense>
     </>
   )
