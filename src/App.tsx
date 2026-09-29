@@ -1,25 +1,24 @@
-import { Suspense } from 'react';
-import './App.css'
-import type { CountryType } from './type';
-import Countries from './components/countries/Countries';
+import { Suspense } from "react";
+import "./App.css";
+import type { CountryType } from "./type";
+import Countries from "./components/countries/Countries";
 
 function App() {
-
   //step 1: create a promise function to fetch data from the api
-  const countriesPromise = async ():Promise<CountryType[]>=>{
-    const res = await fetch('https://openapi.programming-hero.com/api/all')
-    const data = await res.json()
+  const countriesPromise = async (): Promise<CountryType[]> => {
+    const res = await fetch("https://openapi.programming-hero.com/api/all");
+    const data = await res.json();
     return data.countries;
-  }
+  };
 
   return (
     <>
-    <h2>World on the go...</h2>
-    <Suspense fallback="Loading...">
-      <Countries countriesPromise={countriesPromise()}/>
-    </Suspense>
+      <h2>World on the go...</h2>
+      <Suspense fallback="Loading...">
+        <Countries countriesPromise={countriesPromise()} />
+      </Suspense>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
